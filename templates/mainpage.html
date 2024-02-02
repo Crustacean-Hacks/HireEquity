@@ -3,13 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="{{url_for('static', filename='css/main.css')}}"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"
+      integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls"
+      crossorigin="anonymous"
+    />
     <title>Document</title>
   </head>
   <body>
-    AGI 2024
+    <div class="navigation-bar">
+      <div>Job Data Analysis</div>
+      <hr />
+    </div>
+    <div class="main-content">
+      <div class="left"></div>
+      <div class="center">
+        <span>
+          Models have been trained to predict the likelihood of getting a job
+          based on certain applicant informations. Enter your information below
+          to find out your chances
+        </span>
+
+        <h1>Enter your information</h1>
+
+        <form class="pure-form pure-form-aligned">
+          <div class="pure-control-group">
+            <label for="model-name">Select Preferred Model</label>
+            <select id="model-name" name="model-name" required>
+              <option></option>
+              <option>Model 1</option>
+              <option>Model 2</option>
+              <option>Model 3</option>
+            </select>
+          </div>
+          <div class="submit-button">
+            <button type="submit" class="pure-button pure-button-primary">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="right"></div>
+    </div>
   </body>
 </html>
