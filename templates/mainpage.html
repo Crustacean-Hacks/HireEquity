@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.0.0/build/global/luxon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.0.0"></script>
 
+    <script src="{{url_for('static', filename='js/charts.js')}}" defer></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Oswald&display=swap"
       rel="stylesheet"
@@ -36,7 +40,7 @@
           to find out your chances
         </span>
 
-        <h1>Enter your information</h1>
+        <h2>Enter your information</h2>
 
         <form action="/" method="post" class="pure-form pure-form-aligned">
           <div class="pure-control-group">
@@ -100,7 +104,23 @@
 
         <hr />
 
-        <h2>Below are graphs based on the</h2>
+        <h2>Below are graphs based on an e-Recruiting Platform</h2>
+
+        <h3>Interview % By Age</h3>
+        <div><canvas id="age_graph" width="1000" height="500"></canvas></div>
+
+        <h3>Interview % By Education</h3>
+        <div>
+          <canvas id="education_graph" width="1000" height="500"></canvas>
+        </div>
+
+        <h3>Interview % By Employer Size</h3>
+        <div>
+          <canvas id="employer_graph" width="1000" height="500"></canvas>
+        </div>
+
+        <h3>Interview % By GPA</h3>
+        <div><canvas id="gpa_graph" width="1000" height="500"></canvas></div>
       </div>
       <div class="right"></div>
     </div>
