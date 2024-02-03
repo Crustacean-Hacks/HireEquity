@@ -14,28 +14,28 @@ var ageGraph = new Chart(age_graph, {
     datasets: [
       {
         label: "Applicants before Legislation",
-        data: [1263523, 244032, 2458, 8090],
+        data: [739680, 165824, 3657, 1670],
         backgroundColor: "pink",
         borderColor: "pink",
         borderWidth: 1,
       },
       {
         label: "Interview call-backs",
-        data: [5, 8, 2, 1],
+        data: [26449, 3950, 127, 45],
         backgroundColor: "pink",
         borderColor: "pink",
         borderWidth: 1,
       },
       {
         label: "Applicants after Legislation",
-        data: [739680, 165824, 3657, 1670],
+        data: [1263523, 244032, 2458, 8090],
         backgroundColor: "crimson",
         borderColor: "crimson",
         borderWidth: 1,
       },
       {
         label: "Interview call-back",
-        data: [6, 8, 2, 2],
+        data: [37408, 4627, 49, 183],
         backgroundColor: "crimson",
         borderColor: "crimson",
         borderWidth: 1,
@@ -48,7 +48,6 @@ var ageGraph = new Chart(age_graph, {
         color: "gray",
         anchor: "end",
         align: "end",
-        // Other datalabels options
       },
     },
     scales: {
@@ -74,7 +73,7 @@ var educationGraph = new Chart(education_graph, {
     datasets: [
       {
         label: "Applicants before Legislation",
-        data: [718710, 189585, 2674],
+        data: [718237, 189575, 2669],
         backgroundColor: "lightgreen",
         borderColor: "lightgreen",
         borderWidth: 1,
@@ -88,14 +87,14 @@ var educationGraph = new Chart(education_graph, {
       },
       {
         label: "Applicants after Legislation",
-        data: [1263003, 250761, 5777],
+        data: [1261495, 270740, 5744],
         backgroundColor: "green",
         borderColor: "green",
         borderWidth: 1,
       },
       {
         label: "Interviews call-backs",
-        data: [37393, 4841, 53],
+        data: [37372, 4841, 53],
         backgroundColor: "green",
         borderColor: "green",
         borderWidth: 1,
@@ -108,7 +107,6 @@ var educationGraph = new Chart(education_graph, {
         color: "gray",
         anchor: "end",
         align: "end",
-        // Other datalabels options
       },
     },
     scales: {
@@ -130,32 +128,32 @@ var educationGraph = new Chart(education_graph, {
 var employerGraph = new Chart(employer_graph, {
   type: "bar",
   data: {
-    labels: ["51-200", "201-1000", "1001-10000", "> 10000"],
+    labels: ["51 - 200", "201 - 1000", "1001 - 10000", "> 10000"],
     datasets: [
       {
         label: "Applicants before Legislation",
-        data: [10, 12, 3, 6],
+        data: [97674, 40177, 68502, 52823],
         backgroundColor: "lightblue",
         borderColor: "lightblue",
         borderWidth: 1,
       },
       {
         label: "Interview call-backs",
-        data: [5, 6, 1, 2],
+        data: [4790, 1640, 6851, 2719],
         backgroundColor: "lightblue",
         borderColor: "lightblue",
         borderWidth: 1,
       },
       {
         label: "Applicants after Legislation",
-        data: [12, 19, 3, 3],
+        data: [131808, 82528, 80358, 109176],
         backgroundColor: "blue",
         borderColor: "blue",
         borderWidth: 1,
       },
       {
         label: "Interviews call-backs",
-        data: [6, 10, 2, 1],
+        data: [3145, 2963, 4984, 5821],
         backgroundColor: "blue",
         borderColor: "blue",
         borderWidth: 1,
@@ -169,7 +167,6 @@ var employerGraph = new Chart(employer_graph, {
         color: "gray",
         anchor: "end",
         align: "end",
-        // Other datalabels options
       },
     },
     scales: {
@@ -191,32 +188,36 @@ var employerGraph = new Chart(employer_graph, {
 var gpaGraph = new Chart(gpa_graph, {
   type: "bar",
   data: {
-    labels: ["3.5 - 4.0", "3.0 - 3.5", "2.5 - 3.0", "< 2.5"],
+    labels: ["< 5.0", "5.0 - 6.49", "6.5 - 7.9", "8.0 - 10.0"],
+
     datasets: [
       {
         label: "Applicants before Legislation",
-        data: [9, 12, 3, 4],
+        data: [3337, 175864, 141427, 1707],
+
         backgroundColor: "tan",
         borderColor: "tan",
         borderWidth: 1,
       },
       {
         label: "Interview call-backs",
-        data: [4, 6, 1, 2],
+        data: [20, 7246, 4811, 10],
+
         backgroundColor: "tan",
         borderColor: "tan",
         borderWidth: 1,
       },
       {
         label: "Applicants after Legislation",
-        data: [12, 19, 3, 5],
+        data: [2561, 259490, 172720, 7240],
+
         backgroundColor: "brown",
         borderColor: "brown",
         borderWidth: 1,
       },
       {
         label: "Interview call-backs",
-        data: [6, 8, 1, 4],
+        data: [22, 10827, 6122, 10],
         backgroundColor: "brown",
         borderColor: "brown",
         borderWidth: 1,
@@ -229,7 +230,6 @@ var gpaGraph = new Chart(gpa_graph, {
         color: "gray",
         anchor: "end",
         align: "end",
-        // Other datalabels options
       },
     },
     scales: {
