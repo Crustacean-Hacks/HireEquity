@@ -1,160 +1,92 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/luxon@2.0.0/build/global/luxon.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.0.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+{% extends "base.html" %} {% block head %}
+<title>Data Predictions</title>
 
-    <script src="{{url_for('static', filename='js/charts.js')}}" defer></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oswald&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="{{url_for('static', filename='css/main.css')}}"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"
-      integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls"
-      crossorigin="anonymous"
-    />
-    <title>Document</title>
-  </head>
-  <body>
-    <div class="navigation-bar">
-      <div>Job Data Analysis</div>
-      <hr />
-    </div>
-    <div class="main-content">
-      <div class="left"></div>
-      <div class="center">
-        <span>
-          Models have been trained to predict the likelihood of women getting a
-          job based on certain applicant informations. Enter your information
-          below to find out your chances
-        </span>
+{% endblock %} {% block center %}
+<span>
+  Models have been trained to predict the likelihood of women getting a job
+  based on certain applicant informations. Enter your information below to find
+  out your chances
+</span>
 
-        <h2>Enter your information</h2>
+<h2>Enter your information</h2>
 
-        <form action="/" method="post" class="pure-form pure-form-aligned">
-          <div class="pure-control-group">
-            <label for="age">Your Age</label>
-            <input type="number" id="age" name="age" min="1" max="90" />
-          </div>
-          <div class="pure-control-group">
-            <label for="highest-education">Highest Education Achieved</label>
-            <select id="highest-education" name="highest-education" required>
-              <option></option>
-              <option>Graduate</option>
-              <option>Post-Graduate</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="pure-control-group">
-            <label for="job-role">Job Role</label>
-            <select id="job-role" name="job-role" required>
-              <option></option>
-              <option>IT Hardware Engineer</option>
-              <option>IT Mobile Developer</option>
-              <option>IT Software Engineer</option>
-            </select>
-          </div>
-          <div class="pure-control-group">
-            <label for="employer-size">Number of Company Employees</label>
-            <select id="employer-size" name="employer-size" required>
-              <option></option>
-              <option>51 - 200</option>
-              <option>201 - 1000</option>
-              <option>1001 - 10000</option>
-              <option>> 10000</option>
-            </select>
-          </div>
-          <div class="pure-control-group">
-            <label for="education-gpa">Highest Education GPA</label>
-            <select id="education-gpa" name="education-gpa" required>
-              <option></option>
-              <option>3.5-4.0</option>
-              <option>3.0-3.5</option>
-              <option>2.5-3.0</option>
-              <option>< 2.5</option>
-            </select>
-          </div>
+<form action="/" method="post" class="pure-form pure-form-aligned">
+  <div class="pure-control-group">
+    <label for="age">Your Age</label>
+    <input type="number" id="age" name="age" min="1" max="90" />
+  </div>
+  <div class="pure-control-group">
+    <label for="highest-education">Highest Education Achieved</label>
+    <select id="highest-education" name="highest-education" required>
+      <option></option>
+      <option>Graduate</option>
+      <option>Post-Graduate</option>
+      <option>Other</option>
+    </select>
+  </div>
+  <div class="pure-control-group">
+    <label for="job-role">Job Role</label>
+    <select id="job-role" name="job-role" required>
+      <option></option>
+      <option>IT Hardware Engineer</option>
+      <option>IT Mobile Developer</option>
+      <option>IT Software Engineer</option>
+    </select>
+  </div>
+  <div class="pure-control-group">
+    <label for="employer-size">Number of Company Employees</label>
+    <select id="employer-size" name="employer-size" required>
+      <option></option>
+      <option>51 - 200</option>
+      <option>201 - 1000</option>
+      <option>1001 - 10000</option>
+      <option>> 10000</option>
+    </select>
+  </div>
+  <div class="pure-control-group">
+    <label for="education-gpa">Highest Education GPA</label>
+    <select id="education-gpa" name="education-gpa" required>
+      <option></option>
+      <option>3.5-4.0</option>
+      <option>3.0-3.5</option>
+      <option>2.5-3.0</option>
+      <option>< 2.5</option>
+    </select>
+  </div>
 
-          <div class="pure-control-group">
-            <label for="model-name">Select Preferred Model</label>
-            <select id="model-name" name="model-name" required>
-              <option></option>
-              <option>Model 1</option>
-              <option>Model 2</option>
-              <option>Model 3</option>
-            </select>
-          </div>
-          <div class="submit-button">
-            <button type="submit" class="pure-button pure-button-primary">
-              Submit
-            </button>
-          </div>
-        </form>
+  <div class="pure-control-group">
+    <label for="model-name">Select Preferred Model</label>
+    <select id="model-name" name="model-name" required>
+      <option></option>
+      <option>Model 1</option>
+      <option>Model 2</option>
+      <option>Model 3</option>
+    </select>
+  </div>
+  <div class="submit-button">
+    <button type="submit" class="pure-button pure-button-primary">
+      Submit
+    </button>
+  </div>
+</form>
 
-        <hr />
-        <h2>
-          Below are graphs of the data of female job applicants before and after
-          the legislation
-        </h2>
-        <span class="graph-description"
-          >Based on data from an e-Recruiting Platform</span
-        >
+{% if results %}
+<h2>Results</h2>
+<div class="results-data">
+  <span>
+    Based on the information you provided:
+    <br />
+    Precision: <span id="precision">{{ results[0][1] }}</span>
+    <br />
+    Recall: <span id="recall">{{ results[1][1] }}</span>
+    <br />
+    F1 Score: <span id="f1_score">{{ results[2][1] }}</span>
+    <br />
+  </span>
+  <span id="result"></span>
+</div>
+{% endif %}
 
-        <h3>Interviews By Age</h3>
-        <div class="graph-div">
-          <canvas id="age_graph" width="1000" height="500"></canvas>
-        </div>
-        <span class="graph-summary"
-          >Average call-back rate before the legislation: 3.36%</span
-        >
-        <span class="graph-summary"
-          >Average call-back rate after the legislation: 2.78%</span
-        >
+<hr />
 
-        <h3>Interviews By Education</h3>
-        <div class="graph-div">
-          <canvas id="education_graph" width="1000" height="500"></canvas>
-        </div>
-        <span class="graph-summary"
-          >Average call-back rate before the legislation: 3.36%</span
-        >
-        <span class="graph-summary"
-          >Average call-back rate after the legislation: 2.75%</span
-        >
-
-        <h3>Interviews By Employer Size</h3>
-        <div class="graph-div">
-          <canvas id="employer_graph" width="1000" height="500"></canvas>
-        </div>
-        <span class="graph-summary"
-          >Average call-back rate before the legislation: 6.17%</span
-        >
-        <span class="graph-summary"
-          >Average call-back rate after the legislation: 4.19%</span
-        >
-
-        <h3 class="graph-div">Interviews By GPA</h3>
-        <div><canvas id="gpa_graph" width="1000" height="500"></canvas></div>
-        <span class="graph-summary"
-          >Average call-back rate before the legislation: 3.75%</span
-        >
-        <span class="graph-summary"
-          >Average call-back rate after the legislation: 3.84%</span
-        >
-      </div>
-      <div class="right"></div>
-    </div>
-  </body>
-</html>
+{% endblock %}
