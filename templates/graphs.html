@@ -1,0 +1,53 @@
+{% extends "base.html" %} {% block head %}
+<title>Data Graphs</title>
+{% endblock %} {% block center %}
+<h2>
+  Below are graphs of the data of female job applicants before and after the
+  legislation
+</h2>
+<span class="graph-description"
+  >Based on data from an e-Recruiting Platform</span
+>
+
+<h3>Interviews By Age</h3>
+<div class="graph-div">
+  <canvas id="age_graph" width="1000" height="500"></canvas>
+</div>
+<span class="graph-summary"
+  >Average call-back rate before the legislation: 3.36%</span
+>
+<span class="graph-summary"
+  >Average call-back rate after the legislation: 2.78%</span
+>
+
+<h3>Interviews By Education</h3>
+<div class="graph-div">
+  <canvas id="education_graph" width="1000" height="500"></canvas>
+</div>
+<span class="graph-summary"
+  >Average call-back rate before the legislation: 3.36%</span
+>
+<span class="graph-summary"
+  >Average call-back rate after the legislation: 2.75%</span
+>
+
+<h3>Interviews By Employer Size</h3>
+<div class="graph-div">
+  <canvas id="employer_graph" width="1000" height="500"></canvas>
+</div>
+<span class="graph-summary"
+  >Average call-back rate before the legislation: 6.17%</span
+>
+<span class="graph-summary"
+  >Average call-back rate after the legislation: 4.19%</span
+>
+
+<h3 class="graph-div">Interviews By GPA</h3>
+<div><canvas id="gpa_graph" width="1000" height="500"></canvas></div>
+<span class="graph-summary"
+  >Average call-back rate before the legislation: 3.75%</span
+>
+<span class="graph-summary"
+  >Average call-back rate after the legislation: 3.84%</span
+>
+{% endblock %}
