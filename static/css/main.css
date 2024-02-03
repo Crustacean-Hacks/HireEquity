@@ -95,3 +95,14 @@ h3 {
   font-size: small;
   width: max-content;
 }
+
+.graph-summary {
+  color: gray;
+  font-size: small;
+  margin-bottom: 5px;
+  width: max-content;
+}
+
+.graph-div {
+  margin-bottom: 2vh;
+}
