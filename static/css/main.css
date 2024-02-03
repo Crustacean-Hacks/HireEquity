@@ -28,7 +28,12 @@ body {
   margin-bottom: 2vh;
 }
 
+.navigation-bar hr {
+  margin-bottom: 0;
+}
+
 hr {
+  margin-bottom: 5vh;
   border: none;
   width: 150px;
   height: 2px !important;
@@ -82,7 +87,6 @@ span {
 }
 
 h2 {
-  margin-top: 5vh;
   margin-bottom: 5vh;
 }
 
