@@ -3,7 +3,7 @@ import random, math
 
 app = Flask(__name__)
 
-@app.route("/", methods=["GET", "POST"])
+@app.route("/predictions", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
         name = request.form["name"]
@@ -33,7 +33,7 @@ def index():
         )
     return render_template("mainpage.html")
 
-@app.route("/graphs")
+@app.route("/")
 def graphs():
     return render_template("graphs.html")
 
