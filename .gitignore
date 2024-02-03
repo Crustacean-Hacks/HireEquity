@@ -5,3 +5,5 @@ data/
 .idea/
 
 datasets/
+
+analysis/*.csv
