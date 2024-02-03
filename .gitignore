@@ -1,6 +1,8 @@
 venv/
 
-data/
+AfterLaw.csv
+BeforeLaw.csv
+Data.csv
 
 .idea/
 
