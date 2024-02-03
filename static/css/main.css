@@ -6,7 +6,9 @@
 
 body {
   background-color: rgb(24, 0, 41);
+  /* background-color: white; */
   color: white;
+  /* color: black; */
   margin-bottom: 10vh !important;
 }
 

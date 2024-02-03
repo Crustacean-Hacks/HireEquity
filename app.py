@@ -1,5 +1,5 @@
 from flask import Flask, url_for, render_template, request
-import random
+import random, math
 
 app = Flask(__name__)
 
@@ -15,7 +15,7 @@ def index():
         # Do calculations based off of model
         # Return the results
         if name == "Person 3":
-            prob_before_legislation = 15.76
+            prob_before_legislation = 25.76
             prob_after_legislation = 41.34
         elif name == "Person 2":
             prob_before_legislation = 22.18
@@ -24,8 +24,8 @@ def index():
             prob_before_legislation = 11.20
             prob_after_legislation = 34.42
         else:
-            prob_before_legislation = 12.65
-            prob_after_legislation = 21.33
+            prob_before_legislation = round(random.uniform(10, 20), 2)
+            prob_after_legislation = round(random.uniform(15, 25), 2)
 
         return render_template(
             "mainpage.html",
