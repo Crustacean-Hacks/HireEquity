@@ -6,8 +6,4 @@ data/
 
 datasets/
 
-ben_test/
-
-materials/
-
 analysis/*.csv

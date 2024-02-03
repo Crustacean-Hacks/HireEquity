@@ -1,0 +1,26 @@
+{
+  "Person 1": {
+    "age": 25,
+    "Degree": "Graduate",
+    "Job Role": "IT Mobile Engineer",
+    "Company Size": "201-1000",
+    "GPA": "3.0",
+    "Model": "Decision Tree"
+  },
+  "Person 2": {
+    "age": 30,
+    "Degree": "Graduate",
+    "Job Role": "IT Software Engineer",
+    "Company Size": ">10000",
+    "GPA": "3.0",
+    "Model": "Decision Tree"
+  },
+  "Person 3": {
+    "age": 30,
+    "Degree": "Post Graduate",
+    "Job Role": "IT Hardware Engineer",
+    "Company Size": ">10000",
+    "GPA": "3.0",
+    "Model": "Decision Tree"
+  }
+}
