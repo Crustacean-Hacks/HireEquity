@@ -22,19 +22,13 @@ df_input.iloc[0, 12] = 8
 df_input.iloc[0, 17] = 112103
 df_input.iloc[0, 21] = 4
 
-# If you need to filter out columns that still contain None (after replacing with median), you can do so, but it should not be necessary now
-# df_input = df_input.loc[:, df_input.notna().all()]
-
 print(df_input)
 
-# Step 3: Make a prediction
-# Convert DataFrame back to NumPy array for model input if necessary
-input_array = df_input.values
-output = model.predict(input_array)
+# Step 3: Make a prediction (probability)
+# The predict_proba method returns an array of two probabilities: [P(no interview), P(interview)]
+probabilities = model.predict_proba(df_input)
 
-# Assuming you have X_test and y_test prepared for accuracy calculation
-X_test = input_array
-y_test = input_array[:, 24]
-accuracy = model.score(X_test, y_test) * 100
-print("Predicted Output:", output)
-print("Accuracy: ", accuracy, "%")
+# Extract the probability of getting an interview (P(interview)) and convert to percent
+interview_prob_percent = probabilities[:, 1] * 100  # The second column corresponds to P(interview)
+
+print(f"Percent Likelihood of Getting an Interview: {interview_prob_percent[0]:.2f}%")
