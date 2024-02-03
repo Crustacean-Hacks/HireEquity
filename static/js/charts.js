@@ -1,3 +1,4 @@
+var gender_graph = document.getElementById("gender_graph").getContext("2d");
 var age_graph = document.getElementById("age_graph").getContext("2d");
 var education_graph = document
   .getElementById("education_graph")
@@ -6,6 +7,65 @@ var employer_graph = document.getElementById("employer_graph").getContext("2d");
 var gpa_graph = document.getElementById("gpa_graph").getContext("2d");
 // Chart.defaults.plugins.datalabels.anchor = "end";
 // Chart.defaults.plugins.datalabels.align = "end";
+
+var genderGraph = new Chart(gender_graph, {
+  type: "bar",
+  data: {
+    labels: ["Before Legislation", "After Legislation"],
+    datasets: [
+      {
+        label: "Female Applicants",
+        data: [910838, 1518113],
+        backgroundColor: "red",
+        borderColor: "red",
+        borderWidth: 1,
+      },
+      {
+        label: "Call-backs",
+        data: [30571, 42267],
+        backgroundColor: "red",
+        borderColor: "red",
+        borderWidth: 1,
+      },
+      {
+        label: "Male Applicants",
+        data: [1550967, 2330333],
+        backgroundColor: "blue",
+        borderColor: "blue",
+        borderWidth: 1,
+      },
+      {
+        label: "Call-backs",
+        data: [51715, 70432],
+        backgroundColor: "blue",
+        borderColor: "blue",
+        borderWidth: 1,
+      },
+    ],
+  },
+  options: {
+    plugins: {
+      datalabels: {
+        color: "gray",
+        anchor: "end",
+        align: "end",
+      },
+    },
+    scales: {
+      x: {
+        ticks: {
+          color: "white",
+        },
+      },
+      y: {
+        ticks: {
+          color: "white",
+        },
+      },
+    },
+  },
+  plugins: [ChartDataLabels],
+});
 
 var ageGraph = new Chart(age_graph, {
   type: "bar",
