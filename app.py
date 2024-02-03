@@ -2,12 +2,25 @@ from flask import Flask, url_for, render_template, request
 
 app = Flask(__name__)
 
+
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
-        model_method = request.form["model-name"]
-        print(model_method)
+
+        form = request.form
+        model = request.form["model-name"]
+
+        # Do calculations based off of model
+
+        # Return the results
+        return render_template(
+            "mainpage.html",
+            model=model,
+            results=[("percision", 2), ("recall", 3), ("f1", 4)],
+        )
+
     return render_template("mainpage.html")
 
+
 if __name__ == "__main__":
-    app.run(debug= True)
+    app.run(debug=True)
