@@ -12,6 +12,10 @@
 
 <form action="/" method="post" class="pure-form pure-form-aligned">
   <div class="pure-control-group">
+    <label for="name">Your Name</label>
+    <input type="text" id="name" name="name" />
+  </div>
+  <div class="pure-control-group">
     <label for="age">Your Age</label>
     <input type="number" id="age" name="age" min="1" max="90" />
   </div>
@@ -78,11 +82,11 @@
   <span>
     Based on the information you provided:
     <br />
-    Precision: <span id="precision">{{ results[0][1] }}</span>
+    Probability of Call-back before Legislation:
+    <span id="precision">{{ results[0][1] }}%</span>
     <br />
-    Recall: <span id="recall">{{ results[1][1] }}</span>
-    <br />
-    F1 Score: <span id="f1_score">{{ results[2][1] }}</span>
+    Probability of Call-back after Legislation:
+    <span id="recall">{{ results[1][1] }}%</span>
     <br />
   </span>
   <span id="result"></span>
