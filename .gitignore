@@ -1,9 +1,7 @@
-venv/
-
-data/
-
+.env
 .idea/
-
+.vscode/
+__pycache__/
+venv/
+data/
 datasets/
-
-analysis/*.csv

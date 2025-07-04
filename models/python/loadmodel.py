@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 
 # Step 1: Load the model from the pickle file
-with open('storage/model.pickle', 'rb') as file:
+with open('../../storage/pickle/model.pickle', 'rb') as file:
     model = pickle.load(file)
 
 # Step 2: Prepare your input DataFrame
